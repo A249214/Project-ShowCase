@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase Portfolio | Premium Frontend Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- style css -->
+     <link rel="stylesheet" href="./style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Hover.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet">
+    
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Splide.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.7/dist/css/splide.min.css">
+    
+    <!-- PureCounter.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@srezi/purecounterjs/dist/purecounter_vanilla.js"></script>
+    
+    
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="mt-4 text-gray-400">Loading Portfolio...</p>
+        </div>
+    </div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+    
+    <!-- Mouse Glow Effect -->
+    <div class="mouse-glow" id="mouse-glow"></div>
+    
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-2xl font-bold gradient-text">Portfolio</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#featured" class="nav-link">Featured</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    
+                    <!-- Dark/Light Mode Toggle -->
+                    <div class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
+                    </div>
+                </div>
+                
+                <div class="md:hidden flex items-center gap-4">
+                    <div class="theme-toggle" id="theme-toggle-mobile" title="Toggle Dark/Light Mode">
+                    </div>
+                    <button class="text-2xl" id="menu-toggle">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="absolute top-6 right-6 text-3xl" id="menu-close">
+            <i class="bi bi-x"></i>
+        </button>
+        <div class="flex flex-col space-y-8 text-2xl">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#featured" class="nav-link">Featured</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <!-- Gradient Animated Background -->
+        <div class="gradient-bg"></div>
+        
+        <!-- Floating Shapes with Parallax -->
+        <div class="floating-shape shape-1 parallax-element" data-speed="30"></div>
+        <div class="floating-shape shape-2 parallax-element" data-speed="20"></div>
+        <div class="floating-shape shape-3 parallax-element" data-speed="40"></div>
+        
+        <div class="hero-content px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="order-2 lg:order-1">
+                    <p class="text-lg text-cyan-400 mb-4 text-reveal"><span>Welcome to my portfolio</span></p>
+                    <h1 class="hero-title gradient-text">
+                        Creative<br>Developer
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span id="typed-text"></span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <a href="#projects" class="magnetic-btn px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold hover:opacity-90 transition-opacity hover:scale-105 transform">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="magnetic-btn px-8 py-4 border-2 border-cyan-500 rounded-full font-semibold hover:bg-cyan-500/10 transition-colors hover:scale-105 transform">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <div class="hero-image-container">
+                        <div class="hero-image-wrapper">
+                            <img src="./images/shehzad photo.jpeg" alt="Shehzad Ali" class="hero-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating">
+            <a href="#featured" class="text-cyan-400">
+                <i class="bi bi-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Infinite Marquee Section -->
+    <section class="py-8 px-6 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">React</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Vue.js</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">Node.js</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">TypeScript</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Three.js</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">GSAP</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">Tailwind CSS</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Next.js</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">GraphQL</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">MongoDB</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">PostgreSQL</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">Docker</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">AWS</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Figma</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">React</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Vue.js</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">Node.js</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">TypeScript</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Three.js</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">GSAP</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">Tailwind CSS</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Next.js</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">GraphQL</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">MongoDB</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">PostgreSQL</span>
+                    <span class="text-2xl font-bold mx-8 text-pink-400">Docker</span>
+                    <span class="text-2xl font-bold mx-8 text-cyan-400">AWS</span>
+                    <span class="text-2xl font-bold mx-8 text-purple-400">Figma</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics Section -->
+    <section class="py-20 px-6" id="stats">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-400 text-lg mb-4 text-reveal"><span>My Impact</span></p>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Statistics</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="2">0</div>
+                    <p class="text-gray-400 mt-2">Projects</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="2">0</div>
+                    <p class="text-gray-400 mt-2">Clients</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="2">0</div>
+                    <p class="text-gray-400 mt-2">Years Experience</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number purecounter" data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="2">0</div>
+                    <p class="text-gray-400 mt-2">Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Projects Section -->
+    <section class="py-20 px-6" id="featured">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-400 text-lg mb-4 text-reveal"><span>Top Picks</span></p>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Featured Projects</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Hand-picked projects showcasing my best work and technical expertise
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="featured-grid">
+                <!-- Featured projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section class="py-20 px-6" id="projects">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-400 text-lg mb-4 text-reveal"><span>My Work</span></p>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">All Projects</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Explore my collection of 50+ projects spanning various technologies and domains
+                </p>
+            </div>
+            
+            <!-- Search and Filter -->
+            <div class="mb-12" data-aos="fade-up">
+                <div class="search-box mb-8">
+                    <i class="bi bi-search text-gray-400 mr-3"></i>
+                    <input type="text" id="search-input" placeholder="Search projects...">
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-3" id="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="html-css">HTML/CSS</button>
+                    <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                    <button class="filter-btn" data-filter="api">API Projects</button>
+                    <button class="filter-btn" data-filter="ui">UI Components</button>
+                    <button class="filter-btn" data-filter="games">Games</button>
+                    <button class="filter-btn" data-filter="tools">Tools</button>
+                    <button class="filter-btn" data-filter="react">React Style UI</button>
+                </div>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12" data-aos="fade-up">
+                <button class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold hover:opacity-90 transition-opacity" id="load-more">
+                    Load More Projects
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Modal Popup -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content" id="modal-content">
+            <button class="absolute top-4 right-4 text-2xl text-gray-400 hover:text-white transition-colors" id="modal-close">
+                <i class="bi bi-x"></i>
+            </button>
+            <div class="p-8">
+                <div class="swiper modal-swiper mb-6">
+                    <div class="swiper-wrapper" id="modal-slider">
+                        <!-- Modal images will be dynamically inserted here -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div id="modal-details">
+                    <!-- Modal details will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+    <section class="py-20 px-6" id="about">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-400 text-lg mb-4 text-reveal"><span>About Me</span></p>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Get To Know Me</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start mb-16">
+                <div data-aos="fade-right">
+                    <div class="glass rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">My Journey</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            I'm a creative frontend developer with 5+ years of experience building beautiful, 
+                            performant, and user-friendly web applications. I specialize in creating immersive 
+                            digital experiences using modern technologies and cutting-edge animation libraries.
+                        </p>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            My passion lies in transforming complex ideas into elegant solutions. I believe in 
+                            clean code, attention to detail, and continuous learning to stay at the forefront 
+                            of web development.
+                        </p>
+                        
+                        <!-- Timeline -->
+                        <div class="space-y-6">
+                            <div class="timeline-item" data-aos="fade-left">
+                                <h4 class="font-semibold mb-2">2024 - Present</h4>
+                                <p class="text-gray-400 text-sm">Senior Frontend Developer at Tech Company</p>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                                <h4 class="font-semibold mb-2">2021 - 2024</h4>
+                                <p class="text-gray-400 text-sm">Frontend Developer at Startup</p>
+                            </div>
+                            <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                                <h4 class="font-semibold mb-2">2019 - 2021</h4>
+                                <p class="text-gray-400 text-sm">Junior Developer at Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6" data-aos="fade-left">
+                    <!-- Skill Bars -->
+                    <div class="glass rounded-3xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Skills</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">React / Next.js</span>
+                                    <span class="text-cyan-400">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">JavaScript / TypeScript</span>
+                                    <span class="text-cyan-400">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">CSS / Tailwind / SCSS</span>
+                                    <span class="text-cyan-400">92%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="92"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Node.js / Express</span>
+                                    <span class="text-cyan-400">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Three.js / WebGL</span>
+                                    <span class="text-cyan-400">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">GSAP / Animations</span>
+                                    <span class="text-cyan-400">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Cards -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="experience-card" data-aos="fade-up">
+                            <i class="bi bi-code-slash text-3xl text-cyan-400 mb-3"></i>
+                            <h4 class="font-bold text-xl">50+</h4>
+                            <p class="text-gray-400 text-sm">Projects</p>
+                        </div>
+                        <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="bi bi-people text-3xl text-purple-400 mb-3"></i>
+                            <h4 class="font-bold text-xl">100+</h4>
+                            <p class="text-gray-400 text-sm">Clients</p>
+                        </div>
+                        <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-cup text-3xl text-pink-400 mb-3"></i>
+                            <h4 class="font-bold text-xl">5+</h4>
+                            <p class="text-gray-400 text-sm">Years</p>
+                        </div>
+                        <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-trophy text-3xl text-yellow-400 mb-3"></i>
+                            <h4 class="font-bold text-xl">20+</h4>
+                            <p class="text-gray-400 text-sm">Awards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technologies -->
+            <div class="text-center" data-aos="fade-up">
+                <h3 class="text-2xl font-bold mb-6">Technologies I Work With</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Vue.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Three.js</span>
+                    <span class="tech-tag">GSAP</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">GraphQL</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Figma</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-20 px-6 bg-gradient-to-b from-transparent to-purple-900/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-400 text-lg mb-4 text-reveal"><span>Testimonials</span></p>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">What Clients Say</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Feedback from clients I've worked with
+                </p>
+            </div>
+            
+            <div class="swiper testimonials-swiper" data-aos="fade-up">
+                <div class="swiper-wrapper" id="testimonials-slider">
+                    <!-- Testimonials will be dynamically inserted here -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="py-20 px-6" id="contact">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-cyan-400 text-lg mb-4 text-reveal"><span>Get In Touch</span></p>
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">Let's Work Together</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Have a project in mind? Let's create something amazing together
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <div class="glass rounded-3xl p-8">
+                        <form class="space-y-6">
+                            <div class="form-group">
+                                <label class="block text-gray-400 mb-2">Name</label>
+                                <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-500 focus:outline-none transition-all focus:shadow-[0_0_20px_rgba(0,212,255,0.3)]" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label class="block text-gray-400 mb-2">Email</label>
+                                <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-500 focus:outline-none transition-all focus:shadow-[0_0_20px_rgba(0,212,255,0.3)]" placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="block text-gray-400 mb-2">Subject</label>
+                                <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-500 focus:outline-none transition-all focus:shadow-[0_0_20px_rgba(0,212,255,0.3)]" placeholder="Project inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label class="block text-gray-400 mb-2">Message</label>
+                                <textarea rows="5" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-500 focus:outline-none transition-all focus:shadow-[0_0_20px_rgba(0,212,255,0.3)] resize-none" placeholder="Your message..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl font-semibold hover:opacity-90 transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] hover:scale-105 transform">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="space-y-6" data-aos="fade-left">
+                    <div class="glass rounded-2xl p-6 flex items-center gap-4 hover:border-cyan-500/50 transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.2)] hover:-translate-y-1 transform">
+                        <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center">
+                            <i class="bi bi-envelope text-2xl text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Email</h3>
+                            <p class="text-gray-400">muhammadshehzadali022@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 flex items-center gap-4 hover:border-cyan-500/50 transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.2)] hover:-translate-y-1 transform">
+                        <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                            <i class="bi bi-geo-alt text-2xl text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Location</h3>
+                            <p class="text-gray-400">Peshawar</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 flex items-center gap-4 hover:border-cyan-500/50 transition-all hover:shadow-[0_0_30px_rgba(0,212,255,0.2)] hover:-translate-y-1 transform">
+                        <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center">
+                            <i class="bi bi-telephone text-2xl text-pink-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Phone</h3>
+                            <p class="text-gray-400">+92 3189440776</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6">
+                        <h3 class="font-semibold mb-4">Connect With Me</h3>
+                        <div class="flex gap-4">
+                            <a href="https://github.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-cyan-500/20 transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:scale-110 transform">
+                                <i class="bi bi-github text-xl"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-cyan-500/20 transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:scale-110 transform">
+                                <i class="bi bi-linkedin text-xl"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-cyan-500/20 transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:scale-110 transform">
+                                <i class="bi bi-twitter-x text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/1234567890" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-green-500/20 transition-all hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transform">
+                                <i class="bi bi-whatsapp text-xl text-green-400"></i>
+                            </a>
+                            <a href="https://dribbble.com" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-cyan-500/20 transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:scale-110 transform">
+                                <i class="bi bi-dribbble text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div data-aos="fade-up">
+                    <h3 class="text-2xl font-bold gradient-text mb-4">Portfolio</h3>
+                    <p class="text-gray-400 mb-6">
+                        Creating amazing digital experiences with modern technologies and creative design.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://github.com" target="_blank" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-cyan-500/20 transition-all hover:shadow-[0_0_15px_rgba(0,212,255,0.3)] hover:scale-110 transform">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-cyan-500/20 transition-all hover:shadow-[0_0_15px_rgba(0,212,255,0.3)] hover:scale-110 transform">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-cyan-500/20 transition-all hover:shadow-[0_0_15px_rgba(0,212,255,0.3)] hover:scale-110 transform">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://wa.me/1234567890" target="_blank" class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-green-500/20 transition-all hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:scale-110 transform">
+                            <i class="bi bi-whatsapp text-green-400"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="#featured" class="text-gray-400 hover:text-cyan-400 transition-colors">Featured</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors">Projects</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-cyan-400 transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-cyan-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="font-bold mb-4">Categories</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors">Web Apps</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors">Mobile Apps</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors">AI/ML Projects</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors">UI Components</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors">Games</a></li>
+                    </ul>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="bi bi-envelope text-cyan-400"></i>
+                            muhammadshehzadali022@gmail.com
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="bi bi-geo-alt text-cyan-400"></i>
+                            Peshawar Pakistan
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="bi bi-telephone text-cyan-400"></i>
+                            +92 3189440776
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-center md:text-left">
+                    © 2024 Portfolio. Built with <i class="bi bi-heart-fill text-red-500"></i> and modern web technologies
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center text-white opacity-0 invisible transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,212,255,0.5)] hover:scale-110 transform z-50">
+        <i class="bi bi-arrow-up text-xl"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.7/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
