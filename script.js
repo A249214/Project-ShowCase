@@ -639,6 +639,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMagneticButtons();
     initTextReveal();
     initMouseParallax();
+    initContactForm();
 });
 
 // Custom Cursor
@@ -1497,5 +1498,36 @@ function initMouseParallax() {
             const y = mouseY * speed;
             el.style.transform = `translate(${x}px, ${y}px)`;
         });
+    });
+}
+
+// EmailJS Contact Form
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    const contactStatus = document.getElementById('contact-status');
+
+    if (!contactForm || !contactStatus || typeof emailjs === 'undefined') return;
+
+    emailjs.init('Mhe1zYmSSNGlcacqt');
+
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        contactStatus.textContent = 'Sending message...';
+        contactStatus.classList.remove('text-red-400', 'text-green-400');
+        contactStatus.classList.add('text-gray-400');
+
+        emailjs.sendForm('service_rw8aoxs', 'template_ligzt3a', contactForm)
+            .then(() => {
+                contactStatus.textContent = 'Message sent successfully! I will reply soon.';
+                contactStatus.classList.remove('text-red-400');
+                contactStatus.classList.add('text-green-400');
+                contactForm.reset();
+            }, (error) => {
+                console.error('EmailJS send error:', error);
+                contactStatus.textContent = 'Failed to send message. Please try again later.';
+                contactStatus.classList.remove('text-green-400');
+                contactStatus.classList.add('text-red-400');
+            });
     });
 }
